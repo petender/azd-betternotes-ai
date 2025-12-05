@@ -1,0 +1,283 @@
+@page
+@model BetterNotes.Pages.InstructionsModel
+@namespace BetterNotes.Pages
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterNotes - Instructions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .navbar-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .supported-formats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .format-badge {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @@media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">📝 BetterNotes</div>
+        <div class="navbar-menu">
+            <a href="/" class="navbar-link">Upload</a>
+            <a href="/Instructions" class="navbar-link active">Instructions</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>How to Use BetterNotes</h1>
+
+        <div class="feature-box">
+            <p><strong>BetterNotes</strong> is a Microsoft Foundry AI-powered document analysis tool that extracts text and key information from your documents and generates formatted Word documents with the results.</p>
+        </div>
+
+        <h2>🚀 Getting Started</h2>
+        <p>Using BetterNotes is simple and takes just a few steps:</p>
+        <ol>
+            <li><strong>Navigate to the Upload page</strong> using the menu above</li>
+            <li><strong>Choose a file</strong> from your computer (PDF, Word document, or image)</li>
+            <li><strong>Click "Analyze Document"</strong> to start the AI analysis</li>
+            <li><strong>Wait for processing</strong> - you'll see a progress bar while the AI analyzes your document</li>
+            <li><strong>Download your results</strong> as a formatted Word document (.docx)</li>
+        </ol>
+
+        <h2>📄 Supported File Formats</h2>
+        <p>BetterNotes supports a wide variety of file formats:</p>
+        
+        <h3>Documents</h3>
+        <div class="supported-formats">
+            <div class="format-badge">PDF (.pdf)</div>
+            <div class="format-badge">Word (.docx)</div>
+            <div class="format-badge">Word 97-2003 (.doc)</div>
+        </div>
+
+        <h3>Images</h3>
+        <div class="supported-formats">
+            <div class="format-badge">JPEG (.jpg, .jpeg)</div>
+            <div class="format-badge">PNG (.png)</div>
+            <div class="format-badge">BMP (.bmp)</div>
+            <div class="format-badge">TIFF (.tiff, .tif)</div>
+            <div class="format-badge">HEIF (.heif, .heic)</div>
+        </div>
+
+        <h2>✨ What Does It Extract?</h2>
+        <p>Azure Document Intelligence analyzes your documents and extracts:</p>
+        <ul>
+            <li><span class="icon">📝</span><strong>Text Content:</strong> All readable text from the document</li>
+            <li><span class="icon">🔑</span><strong>Key-Value Pairs:</strong> Important information organized as labels and values</li>
+            <li><span class="icon">📊</span><strong>Tables:</strong> Structured data in tabular format</li>
+            <li><span class="icon">📐</span><strong>Layout Information:</strong> Document structure and formatting</li>
+            <li><span class="icon">✍️</span><strong>Handwritten Text:</strong> Recognition of handwritten notes (where applicable)</li>
+        </ul>
+
+        <h2>⚙️ Technical Details</h2>
+        <ul>
+            <li><strong>Maximum File Size:</strong> 100 MB per file</li>
+            <li><strong>Processing Time:</strong> Usually 10-30 seconds depending on document complexity</li>
+            <li><strong>Security:</strong> All files are stored securely in Azure Blob Storage with managed identity authentication</li>
+            <li><strong>Privacy:</strong> Your documents are processed using Azure AI services with enterprise-grade security</li>
+        </ul>
+
+        <h2>💡 Tips for Best Results</h2>
+        <ul>
+            <li>Use high-quality scans or images (minimum 150 DPI recommended)</li>
+            <li>Ensure text is clear and legible</li>
+            <li>For multi-page documents, PDF format works best</li>
+            <li>Remove any password protection from PDFs before uploading</li>
+            <li>Keep file sizes reasonable (under 50 MB when possible)</li>
+        </ul>
+
+        <h2>🔒 Security & Privacy</h2>
+        <p>BetterNotes is built with security in mind:</p>
+        <ul>
+            <li><strong>Passwordless Authentication:</strong> No API keys or secrets in the application</li>
+            <li><strong>Managed Identity:</strong> Uses Azure Managed Identity for secure service-to-service authentication</li>
+            <li><strong>Encrypted Storage:</strong> All files are stored in Azure Blob Storage with encryption</li>
+            <li><strong>HTTPS Only:</strong> All data transmission is encrypted</li>
+            <li><strong>Role-Based Access:</strong> Strict RBAC permissions on all Azure resources</li>
+        </ul>
+
+        <div style="text-align: center;">
+            <a href="/" class="cta-button">Start Analyzing Documents →</a>
+        </div>
+    </div>
+</body>
+</html>

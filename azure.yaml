@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: betternotes
+metadata:
+  template: betternotes-ai-document-analysis
+
+infra:
+  provider: bicep
+  path: infra
+
+services:
+  web:
+    project: .
+    language: csharp
+    host: appservice
+    
+hooks:
+  postprovision:
+    windows:
+      shell: pwsh
+      run: |
+        Write-Host "Configuring application settings..."
+        azd env get-values | Out-File -FilePath .env -Encoding utf8
